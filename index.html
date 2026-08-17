@@ -1,145 +1,330 @@
-<!-- Generated with Claude -->
-
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Business Analytics Portfolio</title>
+
+    <title>Nebiyou Timotewos | Management Analytics Portfolio</title>
 
     <style>
-      /* ============================================================
-       BASIC STYLES — students can tweak colors/fonts here
-       ============================================================ */
       * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
       }
 
+      :root {
+        --navy: #172033;
+        --blue: #315c8c;
+        --light-blue: #eef4fa;
+        --text: #202733;
+        --muted: #657080;
+        --white: #ffffff;
+        --border: #dfe5ec;
+        --background: #f5f7fa;
+      }
+
       body {
         font-family: Arial, Helvetica, sans-serif;
-        color: #222;
-        background: #f7f7f7;
-        line-height: 1.5;
+        color: var(--text);
+        background: var(--background);
+        line-height: 1.6;
       }
 
       .container {
-        max-width: 900px;
+        max-width: 1050px;
         margin: 0 auto;
-        padding: 40px 20px;
+        padding: 45px 24px 70px;
       }
 
-      /* ---------- HEADER (photo + name + subheading) ---------- */
+      /* ---------- HERO ---------- */
+
       header {
         text-align: center;
-        margin-bottom: 30px;
+        padding: 20px 0 35px;
       }
 
-      /* Empty space for photo — replace with your own <img> if you like */
       .photo {
-        width: 140px;
-        height: 140px;
+        width: 135px;
+        height: 135px;
+        margin: 0 auto 22px;
         border-radius: 50%;
-        background: #ddd;
-        border: 2px dashed #aaa;
-        margin: 0 auto 16px;
+        background: var(--light-blue);
+        border: 3px solid var(--blue);
+        object-fit: cover;
         display: flex;
         align-items: center;
         justify-content: center;
-        color: #888;
-        font-size: 13px;
+        color: var(--blue);
+        font-weight: bold;
+        font-size: 14px;
       }
 
       header h1 {
-        font-size: 28px;
-        margin-bottom: 6px;
-      } /* NAME */
-      header p {
-        font-size: 16px;
-        color: #555;
-      } /* EXPERIENCES */
+        font-size: 42px;
+        line-height: 1.15;
+        color: var(--navy);
+        margin-bottom: 12px;
+      }
 
-      /* ---------- TABS ---------- */
+      header .headline {
+        font-size: 18px;
+        color: var(--blue);
+        font-weight: 600;
+        margin-bottom: 12px;
+      }
+
+      header .location {
+        color: var(--muted);
+        font-size: 15px;
+      }
+
+      .links {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .links a {
+        text-decoration: none;
+        color: var(--navy);
+        background: var(--white);
+        border: 1px solid var(--border);
+        padding: 8px 15px;
+        border-radius: 6px;
+        font-size: 14px;
+        transition: 0.2s ease;
+      }
+
+      .links a:hover {
+        background: var(--navy);
+        color: white;
+      }
+
+      /* ---------- NAVIGATION ---------- */
+
       .tabs {
         display: flex;
         justify-content: center;
-        gap: 10px;
-        margin-bottom: 24px;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 28px;
       }
 
       .tab-button {
-        padding: 10px 22px;
-        border: 1px solid #ccc;
-        background: #fff;
+        padding: 11px 22px;
+        border: 1px solid var(--border);
+        background: white;
+        color: var(--navy);
         cursor: pointer;
         font-size: 15px;
-        border-radius: 4px;
+        border-radius: 6px;
+        font-weight: 600;
+      }
+
+      .tab-button:hover {
+        border-color: var(--blue);
       }
 
       .tab-button.active {
-        background: #2c3e50;
-        color: #fff;
-        border-color: #2c3e50;
+        background: var(--navy);
+        color: white;
+        border-color: var(--navy);
       }
 
-      /* ---------- TAB CONTENT ---------- */
+      /* ---------- CONTENT ---------- */
+
       .tab-content {
         display: none;
       }
+
       .tab-content.active {
         display: block;
       }
 
       .panel {
-        background: #fff;
-        border: 1px solid #eee;
-        border-radius: 6px;
-        padding: 24px;
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 30px;
+        margin-bottom: 20px;
       }
 
-      /* ---------- PROJECT CARDS (1 x 3 grid) ---------- */
+      .section-title {
+        color: var(--navy);
+        font-size: 24px;
+        margin-bottom: 14px;
+      }
+
+      .intro {
+        font-size: 17px;
+        color: #3d4653;
+        margin-bottom: 24px;
+      }
+
+      .section-heading {
+        font-size: 18px;
+        color: var(--navy);
+        margin: 24px 0 10px;
+      }
+
+      /* ---------- SKILLS ---------- */
+
+      .skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 9px;
+        margin-top: 12px;
+      }
+
+      .skill {
+        background: var(--light-blue);
+        color: var(--navy);
+        border: 1px solid #d7e3ef;
+        padding: 7px 12px;
+        border-radius: 20px;
+        font-size: 13px;
+      }
+
+      /* ---------- EXPERIENCE ---------- */
+
+      .experience {
+        border-left: 3px solid var(--blue);
+        padding-left: 20px;
+        margin-bottom: 28px;
+      }
+
+      .experience h3 {
+        color: var(--navy);
+        font-size: 19px;
+        margin-bottom: 3px;
+      }
+
+      .experience .role {
+        color: var(--blue);
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+
+      .experience ul {
+        padding-left: 20px;
+      }
+
+      .experience li {
+        margin-bottom: 6px;
+        color: #48515d;
+      }
+
+      /* ---------- PROJECTS ---------- */
+
       .cards {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 16px;
+        gap: 18px;
       }
 
       .card {
-        border: 1px solid #eee;
-        border-radius: 6px;
-        overflow: hidden;
-        background: #fff;
+        background: white;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 22px;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
       }
 
-      /* Empty space for project photo */
-      .card-photo {
-        height: 120px;
-        background: #ddd;
-        border-bottom: 1px dashed #aaa;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #888;
+      .card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(20, 35, 55, 0.08);
+      }
+
+      .card-label {
+        color: var(--blue);
         font-size: 12px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.7px;
+        margin-bottom: 9px;
       }
 
-      .card-text {
-        padding: 14px;
+      .card h3 {
+        color: var(--navy);
+        font-size: 19px;
+        margin-bottom: 10px;
       }
-      .card-text h3 {
-        font-size: 16px;
-        margin-bottom: 6px;
-      }
-      .card-text p {
+
+      .card p {
+        color: #56606d;
         font-size: 14px;
-        color: #555;
       }
 
-      /* ---------- MOBILE: stack cards vertically ---------- */
-      @media (max-width: 640px) {
+      /* ---------- EDUCATION ---------- */
+
+      .education-item {
+        padding: 16px 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .education-item:last-child {
+        border-bottom: none;
+      }
+
+      .education-item h3 {
+        color: var(--navy);
+        font-size: 17px;
+      }
+
+      .education-item p {
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      /* ---------- AWARDS ---------- */
+
+      .awards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .award {
+        background: var(--light-blue);
+        padding: 15px;
+        border-radius: 7px;
+        color: var(--navy);
+        font-size: 14px;
+      }
+
+      /* ---------- FOOTER ---------- */
+
+      footer {
+        text-align: center;
+        margin-top: 45px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      /* ---------- MOBILE ---------- */
+
+      @media (max-width: 720px) {
+        .container {
+          padding: 28px 16px 50px;
+        }
+
+        header h1 {
+          font-size: 32px;
+        }
+
         .cards {
           grid-template-columns: 1fr;
+        }
+
+        .awards {
+          grid-template-columns: 1fr;
+        }
+
+        .panel {
+          padding: 22px;
         }
       }
     </style>
@@ -147,88 +332,290 @@
 
   <body>
     <div class="container">
-      <!-- ============================================================
-         HEADER: photo, name, experiences
-         ============================================================ -->
-      <header>
-        <!-- Replace this div with <img src="your-photo.jpg" class="photo"> -->
-        <div class="photo">Photo</div>
 
-        <h1>Your Name</h1>
-        <p>Business Analyst · SQL · Python · Tableau</p>
+      <!-- HERO -->
+      <header>
+        <img src="profile.png" class="photo" alt="Nebiyou Timotewos">
+
+        <h1>Nebiyou Timotewos</h1>
+
+        <p class="headline">
+          Management Analytics · Data · Strategy · Social Impact
+        </p>
+
+        <p class="location">
+          Master of Management in Analytics Candidate · McGill University
+        </p>
+
+        <div class="links">
+          <a href="mailto:nebiyoutimotewos@gmail.com">Email</a>
+          <a href="https://github.com/nebiyoutimotewos" target="_blank">
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/nebiyoutimotewos/" target="_blank">
+            LinkedIn
+          </a>
+        </div>
       </header>
 
-      <!-- ============================================================
-         TABS
-         ============================================================ -->
+      <!-- NAVIGATION -->
       <div class="tabs">
-        <button class="tab-button active" onclick="showTab('about')">
-          About Me
+        <button class="tab-button active" onclick="showTab('about', this)">
+          About
         </button>
-        <button class="tab-button" onclick="showTab('projects')">
-          Projects
+
+        <button class="tab-button" onclick="showTab('experience', this)">
+          Experience
+        </button>
+
+        <button class="tab-button" onclick="showTab('projects', this)">
+          Impact & Projects
+        </button>
+
+        <button class="tab-button" onclick="showTab('education', this)">
+          Education
         </button>
       </div>
 
-      <!-- ---------- TAB 1: ABOUT ME ---------- -->
+      <!-- ABOUT -->
       <div id="about" class="tab-content active">
         <div class="panel">
-          <p>
-            Write a short introduction about yourself here — your background,
-            skills, and what kind of business analytics role you're looking for.
+          <h2 class="section-title">About Me</h2>
+
+          <p class="intro">
+            I am a management analytics graduate student at McGill University
+            with a background in global political studies, human rights,
+            leadership, and community impact. My work sits at the intersection
+            of data, strategy, policy, and social impact.
           </p>
+
+          <p class="intro">
+            I have founded and scaled youth-led initiatives, developed
+            cross-sector partnerships, led volunteer teams, contributed to
+            university governance, and participated in funding decisions for
+            youth-focused programs.
+          </p>
+
+          <p class="intro">
+            I am interested in using analytics and evidence-based decision
+            making to solve complex organizational and social problems.
+          </p>
+
+          <h3 class="section-heading">Core Skills</h3>
+
+          <div class="skills">
+            <span class="skill">Data Analysis</span>
+            <span class="skill">Python</span>
+            <span class="skill">Statistics</span>
+            <span class="skill">Business Analytics</span>
+            <span class="skill">Strategic Decision-Making</span>
+            <span class="skill">Program Management</span>
+            <span class="skill">Stakeholder Engagement</span>
+            <span class="skill">Partnership Development</span>
+            <span class="skill">Policy Analysis</span>
+            <span class="skill">Leadership</span>
+          </div>
         </div>
       </div>
 
-      <!-- ---------- TAB 2: PROJECTS ---------- -->
+      <!-- EXPERIENCE -->
+      <div id="experience" class="tab-content">
+        <div class="panel">
+          <h2 class="section-title">Experience</h2>
+
+          <div class="experience">
+            <h3>Communities Care</h3>
+            <p class="role">Founder · 2023–Present</p>
+
+            <ul>
+              <li>
+                Founded and scaled a youth-led initiative focused on youth
+                empowerment, mental health, and basic-needs support.
+              </li>
+              <li>
+                Built and maintained 35+ cross-sector partnerships across
+                nonprofit, corporate, academic, and public institutions.
+              </li>
+              <li>
+                Led initiatives distributing 3,500+ care packages to youth in
+                communities around the world.
+              </li>
+              <li>
+                Led volunteer teams and developed programs addressing youth
+                empowerment and men's mental health.
+              </li>
+            </ul>
+          </div>
+
+          <div class="experience">
+            <h3>York University</h3>
+            <p class="role">University Senator · 2024–Present</p>
+
+            <ul>
+              <li>
+                Represent elected student interests in university governance,
+                academic policy, and strategic decision-making.
+              </li>
+              <li>
+                Review policy proposals, academic programs, and student-success
+                initiatives.
+              </li>
+              <li>
+                Analyze governance materials to support informed,
+                evidence-based recommendations.
+              </li>
+            </ul>
+          </div>
+
+          <div class="experience">
+            <h3>TELUS</h3>
+            <p class="role">GTHA Community Board Member · 2024–Present</p>
+
+            <ul>
+              <li>
+                Participate in funding decisions for youth-focused health and
+                education programs.
+              </li>
+              <li>
+                Review grant applications based on impact, governance, and
+                financial sustainability.
+              </li>
+              <li>
+                Contribute to deliberations on community investment priorities
+                and funding allocation.
+              </li>
+            </ul>
+          </div>
+
+          <div class="experience">
+            <h3>International Youth Impact Council</h3>
+            <p class="role">Inaugural Member, Representing Canada · 2024–Present</p>
+
+            <ul>
+              <li>
+                Collaborate with youth leaders across regions on cross-sector
+                initiatives.
+              </li>
+              <li>
+                Participate in engagements with senior government officials,
+                international institutions, civil society organizations, and
+                corporate leaders.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECTS / IMPACT -->
       <div id="projects" class="tab-content">
         <div class="cards">
-          <!-- CARD 1 -->
+
           <div class="card">
-            <div class="card-photo">Project Image</div>
-            <div class="card-text">
-              <h3>Project Title</h3>
-              <p>Short description of what you did and the tools you used.</p>
-            </div>
+            <p class="card-label">Social Impact</p>
+
+            <h3>Communities Care</h3>
+
+            <p>
+              Founded and scaled a youth-led initiative delivering programs in
+              youth empowerment, mental health mentorship, and basic-needs
+              support. The initiative has distributed 3,500+ care packages and
+              built 35+ cross-sector partnerships.
+            </p>
           </div>
 
-          <!-- CARD 2 -->
           <div class="card">
-            <div class="card-photo">Project Image</div>
-            <div class="card-text">
-              <h3>Project Title</h3>
-              <p>Short description of what you did and the tools you used.</p>
-            </div>
+            <p class="card-label">Governance & Strategy</p>
+
+            <h3>University Governance</h3>
+
+            <p>
+              Contribute to university-wide governance through evidence-based
+              review of policy proposals, academic programs, student-success
+              initiatives, and institutional priorities as a University
+              Senator.
+            </p>
           </div>
 
-          <!-- CARD 3 -->
           <div class="card">
-            <div class="card-photo">Project Image</div>
-            <div class="card-text">
-              <h3>Project Title</h3>
-              <p>Short description of what you did and the tools you used.</p>
-            </div>
+            <p class="card-label">Community Investment</p>
+
+            <h3>Youth-Focused Funding</h3>
+
+            <p>
+              Review and assess community grant applications as a TELUS GTHA
+              Community Board Member, considering program impact, governance,
+              financial sustainability, and funding priorities.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- EDUCATION -->
+      <div id="education" class="tab-content">
+        <div class="panel">
+          <h2 class="section-title">Education & Certifications</h2>
+
+          <div class="education-item">
+            <h3>McGill University</h3>
+            <p>Master of Management in Analytics · Expected 2027</p>
+          </div>
+
+          <div class="education-item">
+            <h3>York University</h3>
+            <p>
+              Honours Bachelor of Arts in Global Political Studies, Minor in
+              Human Rights and Equity Studies · 2026
+            </p>
+          </div>
+
+          <div class="education-item">
+            <h3>York University</h3>
+            <p>
+              Professional Certificate in Public Administration and Law · 2026
+            </p>
+          </div>
+
+          <div class="education-item">
+            <h3>Columbia Business School</h3>
+            <p>Certificate in Introduction to Corporate Finance · 2025</p>
+          </div>
+
+          <div class="education-item">
+            <h3>Stanford University</h3>
+            <p>Certificate in Introduction to Statistics · 2025</p>
+          </div>
+
+          <h3 class="section-heading">Selected Honours</h3>
+
+          <div class="awards">
+            <div class="award">Diana Award · 2024</div>
+            <div class="award">First-Ever Youth Community All-Star in Canada</div>
+            <div class="award">Robert J. Tiffin Award · York University</div>
+            <div class="award">Dean's Circle of Scholars</div>
+            <div class="award">Presidential Circle of Scholars</div>
+            <div class="award">30+ Leadership Awards</div>
           </div>
         </div>
       </div>
+
+      <footer>
+        © 2026 Nebiyou Timotewos · Management Analytics Portfolio
+      </footer>
     </div>
 
-    <!-- ============================================================
-       SIMPLE TAB SWITCHING SCRIPT
-       ============================================================ -->
     <script>
-      function showTab(id) {
-        // hide all tab contents
+      function showTab(id, button) {
         document.querySelectorAll(".tab-content").forEach(function (el) {
           el.classList.remove("active");
         });
-        // remove active state from all buttons
+
         document.querySelectorAll(".tab-button").forEach(function (btn) {
           btn.classList.remove("active");
         });
-        // show the selected tab + highlight the clicked button
+
         document.getElementById(id).classList.add("active");
-        event.target.classList.add("active");
+        button.classList.add("active");
       }
     </script>
   </body>
