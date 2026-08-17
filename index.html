@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Nebiyou Timotewos | Entrepreneur · AI · Data · Impact</title>
 
@@ -29,10 +29,8 @@
       --dark: #edf7f1;
       --dark-card: rgba(255, 255, 255, 0.92);
       --dark-card-2: #ffffff;
-
       --white: #102019;
       --muted: #62746a;
-
       --border: rgba(20, 100, 55, 0.14);
       --shadow: 0 25px 60px rgba(25, 80, 50, 0.10);
     }
@@ -50,63 +48,27 @@
     body {
       font-family: Inter, Arial, Helvetica, sans-serif;
       color: var(--white);
-
       background:
-        radial-gradient(
-          circle at 10% 10%,
-          rgba(32, 216, 120, 0.09),
-          transparent 25%
-        ),
-        radial-gradient(
-          circle at 90% 20%,
-          rgba(32, 216, 120, 0.06),
-          transparent 28%
-        ),
-        linear-gradient(
-          135deg,
-          var(--black),
-          var(--dark)
-        );
-
+        radial-gradient(circle at 10% 10%, rgba(32,216,120,.09), transparent 25%),
+        radial-gradient(circle at 90% 20%, rgba(32,216,120,.06), transparent 28%),
+        linear-gradient(135deg, var(--black), var(--dark));
       min-height: 100vh;
       line-height: 1.6;
-
-      transition:
-        background 0.35s ease,
-        color 0.35s ease;
-
       overflow-x: hidden;
+      transition: background .35s ease, color .35s ease;
     }
 
     body::before {
       content: "";
-
       position: fixed;
       inset: 0;
-
       pointer-events: none;
-      opacity: 0.20;
-
+      opacity: .2;
       background-image:
-        linear-gradient(
-          rgba(255,255,255,0.025) 1px,
-          transparent 1px
-        ),
-        linear-gradient(
-          90deg,
-          rgba(255,255,255,0.025) 1px,
-          transparent 1px
-        );
-
+        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
       background-size: 55px 55px;
-
-      mask-image:
-        linear-gradient(
-          to bottom,
-          black,
-          transparent 75%
-        );
-
+      mask-image: linear-gradient(to bottom, black, transparent 75%);
       z-index: -1;
     }
 
@@ -119,142 +81,94 @@
       font-family: inherit;
     }
 
-    .page {
+    .page,
+    .nav-inner {
       width: min(1320px, calc(100% - 70px));
       margin: 0 auto;
     }
 
-    /* ============================================================
+    /* =========================
        NAVIGATION
-       ============================================================ */
+       ========================= */
 
     nav {
       position: sticky;
       top: 0;
       z-index: 1000;
-
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
-
-      background: rgba(3, 11, 7, 0.88);
-
+      background: rgba(3,11,7,.88);
       border-bottom: 1px solid var(--border);
     }
 
     body.light nav {
-      background: rgba(244, 250, 247, 0.90);
+      background: rgba(244,250,247,.90);
     }
 
     .nav-inner {
-      width: min(1320px, calc(100% - 70px));
-
       min-height: 82px;
-      margin: auto;
-
       display: flex;
       align-items: center;
       justify-content: space-between;
-
       gap: 25px;
     }
-
-    /* ============================================================
-       NT + MAPLE LEAF LOGO
-       ============================================================ */
 
     .brand {
       display: flex;
       align-items: center;
       gap: 14px;
-
       min-width: 250px;
     }
 
     .nt-logo {
       position: relative;
-
       width: 58px;
       height: 58px;
-
       flex-shrink: 0;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
+      display: grid;
+      place-items: center;
       border-radius: 16px;
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(32,216,120,0.16),
-          rgba(32,216,120,0.025)
-        );
-
-      border: 1px solid rgba(32,216,120,0.30);
-
-      box-shadow:
-        0 0 28px rgba(32,216,120,0.10);
-
+      background: linear-gradient(
+        145deg,
+        rgba(32,216,120,.16),
+        rgba(32,216,120,.025)
+      );
+      border: 1px solid rgba(32,216,120,.30);
+      box-shadow: 0 0 28px rgba(32,216,120,.10);
       overflow: hidden;
+      transition: transform .3s ease, box-shadow .3s ease;
     }
 
-    /* Maple leaf sits behind and wraps around NT */
+    .brand:hover .nt-logo {
+      transform: translateY(-2px) rotate(-2deg);
+      box-shadow: 0 0 35px rgba(32,216,120,.22);
+    }
+
     .nt-logo::before {
       content: "🍁";
-
       position: absolute;
-
       left: 50%;
       top: 50%;
-
-      transform:
-        translate(-50%, -50%)
-        rotate(-8deg);
-
+      transform: translate(-50%,-50%) rotate(-8deg);
       font-size: 43px;
-
       line-height: 1;
-
       z-index: 1;
-
-      filter:
-        drop-shadow(
-          0 0 7px
-          rgba(32,216,120,0.20)
-        );
+      filter: drop-shadow(0 0 7px rgba(32,216,120,.20));
     }
 
-    /* NT sits in front of the maple leaf */
     .nt-logo::after {
       content: "NT";
-
       position: absolute;
-
       left: 50%;
       top: 50%;
-
-      transform:
-        translate(-50%, -48%);
-
+      transform: translate(-50%,-48%);
       z-index: 3;
-
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
+      font-family: Georgia, "Times New Roman", serif;
       font-size: 25px;
-
       font-weight: 900;
-
       letter-spacing: -5px;
-
       color: white;
-
-      text-shadow:
-        0 1px 4px rgba(0,0,0,0.45);
-
+      text-shadow: 0 1px 4px rgba(0,0,0,.45);
       margin-left: -3px;
     }
 
@@ -270,10 +184,6 @@
       margin-top: 1px;
     }
 
-    /* ============================================================
-       NAV LINKS
-       ============================================================ */
-
     .nav-links {
       display: flex;
       align-items: center;
@@ -282,37 +192,25 @@
 
     .nav-links a {
       position: relative;
-
       color: var(--muted);
-
       font-size: 14px;
       font-weight: 750;
-
       cursor: pointer;
-
-      transition: 0.25s ease;
-
+      transition: .25s ease;
       padding: 29px 0;
     }
 
     .nav-links a::after {
       content: "";
-
       position: absolute;
-
       left: 0;
       right: 0;
       bottom: 17px;
-
       height: 2px;
-
       border-radius: 20px;
-
       background: var(--green);
-
       transform: scaleX(0);
-
-      transition: transform 0.25s ease;
+      transition: transform .25s ease;
     }
 
     .nav-links a:hover,
@@ -325,10 +223,6 @@
       transform: scaleX(1);
     }
 
-    /* ============================================================
-       NAV RIGHT
-       ============================================================ */
-
     .nav-right {
       display: flex;
       align-items: center;
@@ -339,27 +233,23 @@
       display: flex;
       align-items: center;
       gap: 6px;
-
       color: var(--muted);
-
       font-size: 13px;
       font-weight: 800;
-
       margin-right: 6px;
     }
 
     .language button {
       border: 0;
       background: transparent;
-
       color: var(--muted);
-
       cursor: pointer;
-
       font-weight: 800;
       padding: 4px;
+      transition: color .2s ease;
     }
 
+    .language button:hover,
     .language button.active {
       color: var(--green);
     }
@@ -367,138 +257,83 @@
     .icon-button {
       width: 42px;
       height: 42px;
-
       border: 1px solid var(--border);
-
       border-radius: 11px;
-
-      background: rgba(255,255,255,0.02);
-
+      background: rgba(255,255,255,.02);
       color: var(--white);
-
       cursor: pointer;
-
       display: grid;
       place-items: center;
-
       font-size: 16px;
       font-weight: 800;
-
-      transition: 0.25s ease;
+      transition: .25s ease;
     }
 
     .icon-button:hover {
       border-color: var(--green);
       color: var(--green);
-
       transform: translateY(-3px);
-
-      box-shadow:
-        0 8px 25px
-        rgba(32,216,120,0.10);
+      box-shadow: 0 8px 25px rgba(32,216,120,.10);
     }
-
-    /* ============================================================
-       INSTAGRAM ICON
-       ============================================================ */
 
     .instagram-icon {
       width: 19px;
       height: 19px;
-
       display: block;
-
       position: relative;
-
       border: 2px solid currentColor;
-
       border-radius: 6px;
     }
 
     .instagram-icon::before {
       content: "";
-
       position: absolute;
-
       width: 7px;
       height: 7px;
-
       left: 50%;
       top: 50%;
-
-      transform:
-        translate(-50%, -50%);
-
+      transform: translate(-50%,-50%);
       border: 2px solid currentColor;
-
       border-radius: 50%;
     }
 
     .instagram-icon::after {
       content: "";
-
       position: absolute;
-
       width: 3px;
       height: 3px;
-
       top: 3px;
       right: 3px;
-
       border-radius: 50%;
-
       background: currentColor;
     }
 
-    /* ============================================================
+    /* =========================
        HERO
-       ============================================================ */
+       ========================= */
 
     .hero {
       min-height: 650px;
-
       display: grid;
-
-      grid-template-columns:
-        0.9fr
-        1.55fr
-        0.95fr;
-
+      grid-template-columns: .9fr 1.55fr .95fr;
       align-items: center;
-
       gap: 55px;
-
-      padding:
-        75px 0
-        55px;
-
+      padding: 75px 0 55px;
       position: relative;
     }
 
     .hero::before {
       content: "";
-
       position: absolute;
-
       width: 520px;
       height: 520px;
-
       border-radius: 50%;
-
-      background:
-        rgba(32,216,120,0.08);
-
+      background: rgba(32,216,120,.08);
       filter: blur(90px);
-
       left: -300px;
       top: 60px;
-
       z-index: -1;
     }
-
-    /* ============================================================
-       PHOTO
-       ============================================================ */
 
     .hero-photo-wrap {
       display: flex;
@@ -508,278 +343,163 @@
     .hero-photo {
       width: 300px;
       height: 300px;
-
       object-fit: cover;
-
       border-radius: 50%;
-
       border: 5px solid var(--green);
-
       padding: 7px;
-
       background: var(--black);
-
       box-shadow:
-        0 0 0 10px rgba(32,216,120,0.06),
-        0 0 70px rgba(32,216,120,0.22);
-
-      transition: 0.4s ease;
+        0 0 0 10px rgba(32,216,120,.06),
+        0 0 70px rgba(32,216,120,.22);
+      transition: .4s ease;
     }
 
     .hero-photo:hover {
-      transform:
-        translateY(-8px)
-        scale(1.025);
-
+      transform: translateY(-8px) scale(1.025);
       box-shadow:
-        0 0 0 12px rgba(32,216,120,0.09),
-        0 0 100px rgba(32,216,120,0.28);
+        0 0 0 12px rgba(32,216,120,.09),
+        0 0 100px rgba(32,216,120,.28);
     }
-
-    /* ============================================================
-       HERO TEXT
-       ============================================================ */
 
     .eyebrow {
       display: inline-block;
-
-      border:
-        1px solid
-        rgba(32,216,120,0.38);
-
-      background:
-        rgba(32,216,120,0.06);
-
+      border: 1px solid rgba(32,216,120,.38);
+      background: rgba(32,216,120,.06);
       color: var(--green);
-
       border-radius: 999px;
-
       padding: 7px 14px;
-
       margin-bottom: 20px;
-
       font-size: 10px;
-
       font-weight: 900;
-
       letter-spacing: 1.4px;
-
       text-transform: uppercase;
     }
 
     .hero h1 {
-      font-size:
-        clamp(52px, 5vw, 82px);
-
+      font-size: clamp(52px,5vw,82px);
       line-height: 1.02;
-
       letter-spacing: -4px;
-
       margin-bottom: 18px;
-
       color: var(--white);
     }
 
     .hero-title {
       color: var(--green);
-
-      font-size:
-        clamp(23px, 2.2vw, 32px);
-
+      font-size: clamp(23px,2.2vw,32px);
       font-weight: 850;
-
       line-height: 1.28;
-
       max-width: 720px;
-
       margin-bottom: 18px;
     }
 
     .hero-subtitle {
       color: var(--muted);
-
       font-size: 14px;
-
       margin-bottom: 25px;
     }
 
-    /* ============================================================
-       BUTTONS
-       ============================================================ */
-
-    .hero-buttons {
+    .hero-buttons,
+    .socials {
       display: flex;
-
       gap: 11px;
-
       flex-wrap: wrap;
     }
 
     .primary-button,
     .secondary-button {
       padding: 12px 18px;
-
       border-radius: 10px;
-
       font-weight: 850;
-
       font-size: 13px;
-
       display: inline-flex;
-
       align-items: center;
-
       gap: 8px;
-
-      transition: 0.25s ease;
+      transition: .25s ease;
     }
 
     .primary-button {
       color: #031109;
-
       background: var(--green);
-
       border: 1px solid var(--green);
     }
 
     .primary-button:hover {
       transform: translateY(-3px);
-
-      box-shadow:
-        0 12px 35px
-        rgba(32,216,120,0.25);
+      box-shadow: 0 12px 35px rgba(32,216,120,.25);
     }
 
     .secondary-button {
       color: var(--white);
-
-      background:
-        rgba(255,255,255,0.02);
-
-      border:
-        1px solid
-        var(--border);
+      background: rgba(255,255,255,.02);
+      border: 1px solid var(--border);
     }
 
     .secondary-button:hover {
       border-color: var(--green);
-
       color: var(--green);
-
       transform: translateY(-3px);
     }
 
-    /* ============================================================
-       SOCIALS
-       ============================================================ */
-
     .socials {
-      display: flex;
-
-      gap: 9px;
-
       margin-top: 20px;
-
-      flex-wrap: wrap;
+      gap: 9px;
     }
 
     .social {
       padding: 9px 13px;
-
-      border:
-        1px solid
-        var(--border);
-
+      border: 1px solid var(--border);
       border-radius: 9px;
-
-      background:
-        rgba(255,255,255,0.02);
-
+      background: rgba(255,255,255,.02);
       color: var(--white);
-
       font-size: 12px;
-
       font-weight: 750;
-
-      transition: 0.25s ease;
+      transition: .25s ease;
     }
 
     .social:hover {
       color: var(--green);
-
       border-color: var(--green);
-
       transform: translateY(-3px);
     }
 
-    /* ============================================================
-       CREDENTIAL CARDS
-       ============================================================ */
-
     .hero-side {
       display: flex;
-
       flex-direction: column;
-
       gap: 13px;
     }
 
     .credential-card {
-      border:
-        1px solid
-        var(--border);
-
+      border: 1px solid var(--border);
       border-radius: 15px;
-
       padding: 18px;
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(255,255,255,0.035),
-          rgba(255,255,255,0.01)
-        );
-
+      background: linear-gradient(
+        145deg,
+        rgba(255,255,255,.035),
+        rgba(255,255,255,.01)
+      );
       display: flex;
-
       align-items: center;
-
       gap: 14px;
-
-      transition: 0.3s ease;
+      transition: .3s ease;
     }
 
     .credential-card:hover {
       transform: translateY(-4px);
-
-      border-color:
-        rgba(32,216,120,0.40);
-
+      border-color: rgba(32,216,120,.40);
       background: var(--dark-card-2);
     }
 
     .credential-icon {
       width: 48px;
       height: 48px;
-
       border-radius: 13px;
-
       flex-shrink: 0;
-
       display: grid;
       place-items: center;
-
-      background:
-        rgba(32,216,120,0.10);
-
-      border:
-        1px solid
-        rgba(32,216,120,0.25);
-
+      background: rgba(32,216,120,.10);
+      border: 1px solid rgba(32,216,120,.25);
       color: var(--green);
-
       font-size: 18px;
-
       font-weight: 900;
     }
 
@@ -793,140 +513,83 @@
       font-size: 11px;
     }
 
-    /* ============================================================
+    /* =========================
        STATS
-       ============================================================ */
+       ========================= */
 
     .stats {
       display: grid;
-
-      grid-template-columns:
-        repeat(3, 1fr);
-
+      grid-template-columns: repeat(3,1fr);
       gap: 18px;
-
       margin-bottom: 30px;
     }
 
     .stat {
       position: relative;
-
       overflow: hidden;
-
-      border:
-        1px solid
-        var(--border);
-
+      border: 1px solid var(--border);
       border-radius: 16px;
-
       padding: 23px;
-
-      background:
-        rgba(255,255,255,0.025);
-
-      transition:
-        transform 0.25s ease,
-        border-color 0.25s ease,
-        box-shadow 0.25s ease;
+      background: rgba(255,255,255,.025);
+      transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
     }
 
     .stat:hover {
-      transform:
-        translateY(-7px)
-        scale(1.015);
-
-      border-color:
-        rgba(32,216,120,0.38);
-
-      box-shadow:
-        0 18px 40px
-        rgba(0,0,0,0.18);
+      transform: translateY(-7px) scale(1.015);
+      border-color: rgba(32,216,120,.38);
+      box-shadow: 0 18px 40px rgba(0,0,0,.18);
     }
 
     .stat::after {
       content: "";
-
       position: absolute;
-
       width: 100px;
       height: 100px;
-
       border-radius: 50%;
-
-      background:
-        rgba(32,216,120,0.07);
-
+      background: rgba(32,216,120,.07);
       right: -40px;
       top: -40px;
-
       pointer-events: none;
     }
 
     .stat-number {
       font-size: 32px;
-
       font-weight: 950;
-
       color: var(--white);
-
       min-height: 48px;
-
       display: flex;
-
       align-items: center;
     }
 
     .stat-label {
       color: var(--muted);
-
       font-size: 12px;
-
       font-weight: 700;
-
       max-width: 220px;
     }
 
-    /* ============================================================
-       SECTION NAV
-       ============================================================ */
+    /* =========================
+       SECTION BUTTONS
+       ========================= */
 
     .section-nav {
       display: flex;
-
       justify-content: center;
-
       flex-wrap: wrap;
-
       gap: 8px;
-
       margin: 30px 0;
     }
 
     .section-button {
-      border:
-        1px solid
-        var(--border);
-
+      border: 1px solid var(--border);
       border-radius: 10px;
-
-      background:
-        rgba(255,255,255,0.025);
-
+      background: rgba(255,255,255,.025);
       color: var(--muted);
-
       padding: 11px 20px;
-
       cursor: pointer;
-
       font-size: 13px;
-
       font-weight: 800;
-
-      transition:
-        transform 0.25s ease,
-        border-color 0.25s ease,
-        background 0.25s ease,
-        color 0.25s ease;
+      transition: .25s ease;
     }
 
     .section-button:hover {
@@ -936,25 +599,18 @@
     .section-button:hover,
     .section-button.active {
       background: var(--green);
-
       color: #031109;
-
       border-color: var(--green);
-
-      box-shadow:
-        0 8px 25px
-        rgba(32,216,120,0.14);
+      box-shadow: 0 8px 25px rgba(32,216,120,.14);
     }
 
-    /* ============================================================
+    /* =========================
        CONTENT
-       ============================================================ */
+       ========================= */
 
     .tab-content {
       display: none;
-
-      animation:
-        fadeIn 0.35s ease;
+      animation: fadeIn .35s ease;
     }
 
     .tab-content.active {
@@ -962,49 +618,31 @@
     }
 
     @keyframes fadeIn {
-
       from {
         opacity: 0;
-
-        transform:
-          translateY(12px);
+        transform: translateY(12px);
       }
-
       to {
         opacity: 1;
-
-        transform:
-          translateY(0);
+        transform: translateY(0);
       }
-
     }
 
     .content-grid {
       display: grid;
-
-      grid-template-columns:
-        1.75fr
-        0.85fr;
-
+      grid-template-columns: 1.75fr .85fr;
       gap: 20px;
     }
 
     .panel {
-      border:
-        1px solid
-        var(--border);
-
+      border: 1px solid var(--border);
       border-radius: 18px;
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(255,255,255,0.035),
-          rgba(255,255,255,0.015)
-        );
-
+      background: linear-gradient(
+        145deg,
+        rgba(255,255,255,.035),
+        rgba(255,255,255,.015)
+      );
       padding: 32px;
-
       box-shadow: var(--shadow);
     }
 
@@ -1012,60 +650,41 @@
     body.light .credential-card,
     body.light .stat,
     body.light .project {
-      background:
-        rgba(255,255,255,0.90);
+      background: rgba(255,255,255,.90);
     }
 
     .panel h2 {
       font-size: 26px;
-
       margin-bottom: 20px;
     }
 
     .panel h3 {
       font-size: 16px;
-
       margin-top: 24px;
-
       margin-bottom: 9px;
     }
 
     .panel p {
       color: var(--muted);
-
       font-size: 14px;
-
       margin-bottom: 16px;
     }
-
-    /* ============================================================
-       QUOTE CARD
-       ============================================================ */
 
     .quote-card {
       background:
         radial-gradient(
           circle at 90% 10%,
-          rgba(32,216,120,0.18),
+          rgba(32,216,120,.18),
           transparent 38%
         ),
-        linear-gradient(
-          145deg,
-          #061b11,
-          #0b2c1c
-        );
-
-      border-color:
-        rgba(32,216,120,0.24);
+        linear-gradient(145deg,#061b11,#0b2c1c);
+      border-color: rgba(32,216,120,.24);
     }
 
     .quote-mark {
       color: var(--green);
-
       font-size: 58px;
-
       line-height: 1;
-
       margin-bottom: 8px;
     }
 
@@ -1077,102 +696,72 @@
       color: #d8eee1;
     }
 
-    /* ============================================================
-       SKILLS
-       ============================================================ */
-
     .skills {
       display: flex;
-
       flex-wrap: wrap;
-
       gap: 8px;
-
       margin-top: 17px;
     }
 
     .skill {
       padding: 7px 11px;
-
-      border:
-        1px solid
-        rgba(32,216,120,0.23);
-
+      border: 1px solid rgba(32,216,120,.23);
       border-radius: 999px;
-
-      background:
-        rgba(32,216,120,0.06);
-
+      background: rgba(32,216,120,.06);
       color: var(--white);
-
       font-size: 11px;
-
       font-weight: 750;
+      transition: .2s ease;
     }
 
-    /* ============================================================
+    .skill:hover {
+      transform: translateY(-2px);
+      border-color: var(--green);
+    }
+
+    /* =========================
        EXPERIENCE
-       ============================================================ */
+       ========================= */
 
     .timeline {
       display: flex;
-
       flex-direction: column;
-
       gap: 25px;
     }
 
     .experience {
       position: relative;
-
       padding-left: 25px;
-
-      border-left:
-        2px solid
-        rgba(32,216,120,0.30);
+      border-left: 2px solid rgba(32,216,120,.30);
     }
 
     .experience::before {
       content: "";
-
       position: absolute;
-
       left: -6px;
       top: 5px;
-
       width: 10px;
       height: 10px;
-
       border-radius: 50%;
-
       background: var(--green);
-
-      box-shadow:
-        0 0 15px
-        rgba(32,216,120,0.45);
+      box-shadow: 0 0 15px rgba(32,216,120,.45);
     }
 
     .experience h3 {
       font-size: 17px;
-
       margin-top: 0;
     }
 
     .experience-role {
       color: var(--green);
-
       font-size: 13px;
-
       font-weight: 850;
-
       margin-bottom: 8px;
     }
 
     .experience ul {
       padding-left: 18px;
-
       color: var(--muted);
-
       font-size: 13px;
     }
 
@@ -1180,116 +769,72 @@
       margin-bottom: 5px;
     }
 
-    /* ============================================================
+    /* =========================
        PROJECTS
-       ============================================================ */
+       ========================= */
 
     .projects {
       display: grid;
-
-      grid-template-columns:
-        repeat(2, 1fr);
-
+      grid-template-columns: repeat(2,1fr);
       gap: 18px;
     }
 
     .project {
-      border:
-        1px solid
-        var(--border);
-
+      border: 1px solid var(--border);
       border-radius: 17px;
-
       padding: 25px;
-
-      background:
-        rgba(255,255,255,0.025);
-
-      transition:
-        transform 0.25s ease,
-        border-color 0.25s ease,
-        box-shadow 0.25s ease;
+      background: rgba(255,255,255,.025);
+      transition: .25s ease;
     }
 
     .project:hover {
-      transform:
-        translateY(-7px)
-        scale(1.015);
-
-      border-color:
-        rgba(32,216,120,0.38);
-
-      box-shadow:
-        0 18px 45px
-        rgba(0,0,0,0.22);
+      transform: translateY(-7px) scale(1.015);
+      border-color: rgba(32,216,120,.38);
+      box-shadow: 0 18px 45px rgba(0,0,0,.22);
     }
 
     .project-icon {
       width: 47px;
       height: 47px;
-
       border-radius: 13px;
-
       display: grid;
-
       place-items: center;
-
       margin-bottom: 16px;
-
       color: #031109;
-
       background: var(--green);
-
       font-weight: 950;
-
       font-size: 17px;
     }
 
     .project h3 {
       font-size: 18px;
-
       margin-bottom: 7px;
     }
 
     .project p {
       color: var(--muted);
-
       font-size: 13px;
     }
 
     .project-tag {
       display: inline-block;
-
       margin-top: 13px;
-
       padding: 5px 9px;
-
       border-radius: 999px;
-
       color: var(--green);
-
-      background:
-        rgba(32,216,120,0.07);
-
-      border:
-        1px solid
-        rgba(32,216,120,0.15);
-
+      background: rgba(32,216,120,.07);
+      border: 1px solid rgba(32,216,120,.15);
       font-size: 10px;
-
       font-weight: 850;
     }
 
-    /* ============================================================
+    /* =========================
        EDUCATION
-       ============================================================ */
+       ========================= */
 
     .education-item {
       padding: 21px 0;
-
-      border-bottom:
-        1px solid
-        var(--border);
+      border-bottom: 1px solid var(--border);
     }
 
     .education-item:last-child {
@@ -1298,108 +843,70 @@
 
     .education-item h3 {
       font-size: 18px;
-
       margin-top: 0;
     }
 
     .education-item strong {
       color: var(--green);
-
       font-size: 13px;
     }
 
-    /* ============================================================
-       MOUSE FOLLOWING GREEN GLOW
-       ============================================================ */
+    /* =========================
+       CURSOR EFFECT
+       ========================= */
 
     .cursor-glow {
       position: fixed;
-
       width: 260px;
       height: 260px;
-
       border-radius: 50%;
-
       pointer-events: none;
-
       z-index: 9999;
-
-      background:
-        radial-gradient(
-          circle,
-          rgba(32, 216, 120, 0.10) 0%,
-          rgba(32, 216, 120, 0.045) 30%,
-          transparent 70%
-        );
-
-      transform:
-        translate(-50%, -50%);
-
+      background: radial-gradient(
+        circle,
+        rgba(32,216,120,.10) 0%,
+        rgba(32,216,120,.045) 30%,
+        transparent 70%
+      );
+      transform: translate(-50%,-50%);
       opacity: 0;
-
-      transition:
-        opacity 0.25s ease;
-
+      transition: opacity .25s ease;
       mix-blend-mode: screen;
     }
 
-    /* ============================================================
+    /* =========================
        FOOTER
-       ============================================================ */
+       ========================= */
 
     footer {
       margin-top: 75px;
-
-      padding:
-        38px 0
-        48px;
-
-      border-top:
-        1px solid
-        var(--border);
-
+      padding: 38px 0 48px;
+      border-top: 1px solid var(--border);
       display: flex;
-
       justify-content: space-between;
-
       align-items: center;
-
       gap: 25px;
     }
 
     .footer-brand {
       display: flex;
-
       align-items: center;
-
       gap: 12px;
     }
 
     .footer-logo {
       width: 43px;
       height: 43px;
-
       border-radius: 12px;
-
-      background:
-        linear-gradient(
-          135deg,
-          #20d878,
-          #087b40
-        );
-
+      background: linear-gradient(135deg,#20d878,#087b40);
       display: grid;
-
       place-items: center;
-
       color: white;
-
       font-weight: 950;
     }
 
     footer p {
       color: var(--muted);
-
       font-size: 12px;
     }
 
@@ -1411,44 +918,76 @@
       color: var(--green);
     }
 
-    /* ============================================================
+    /* =========================
+       LANGUAGE
+       ========================= */
+
+    .fr {
+      display: none;
+    }
+
+    body.lang-fr .en {
+      display: none;
+    }
+
+    body.lang-fr .fr {
+      display: inline;
+    }
+
+    body.lang-en .en {
+      display: inline;
+    }
+
+    body.lang-en .fr {
+      display: none;
+    }
+
+    div.en,
+    p.en,
+    h2.en,
+    h3.en {
+      display: block;
+    }
+
+    body.lang-fr div.en,
+    body.lang-fr p.en,
+    body.lang-fr h2.en,
+    body.lang-fr h3.en {
+      display: none;
+    }
+
+    body.lang-fr div.fr,
+    body.lang-fr p.fr,
+    body.lang-fr h2.fr,
+    body.lang-fr h3.fr {
+      display: block;
+    }
+
+    /* =========================
        RESPONSIVE
-       ============================================================ */
+       ========================= */
 
-    @media (max-width: 1100px) {
-
+    @media (max-width:1100px) {
       .hero {
-        grid-template-columns:
-          0.75fr
-          1.4fr;
-
+        grid-template-columns: .75fr 1.4fr;
         gap: 35px;
       }
 
       .hero-side {
         grid-column: 1 / -1;
-
         display: grid;
-
-        grid-template-columns:
-          repeat(3, 1fr);
+        grid-template-columns: repeat(3,1fr);
       }
 
       .nav-links {
         gap: 20px;
       }
-
     }
 
-    @media (max-width: 850px) {
-
+    @media (max-width:850px) {
       .page,
       .nav-inner {
-        width:
-          min(
-            100% - 35px,
-            700px
-          );
+        width: min(100% - 35px,700px);
       }
 
       .nav-links {
@@ -1465,9 +1004,7 @@
 
       .hero {
         grid-template-columns: 1fr;
-
         text-align: center;
-
         padding-top: 55px;
       }
 
@@ -1487,36 +1024,26 @@
 
       .hero-side {
         grid-column: auto;
-
         grid-template-columns: 1fr;
       }
 
-      .stats {
-        grid-template-columns: 1fr;
-      }
-
-      .content-grid {
-        grid-template-columns: 1fr;
-      }
-
+      .stats,
+      .content-grid,
       .projects {
         grid-template-columns: 1fr;
       }
 
       footer {
         flex-direction: column;
-
         text-align: center;
       }
 
       .copyright {
         text-align: center;
       }
-
     }
 
-    @media (max-width: 500px) {
-
+    @media (max-width:500px) {
       .page,
       .nav-inner {
         width: calc(100% - 24px);
@@ -1528,7 +1055,6 @@
 
       .hero h1 {
         font-size: 43px;
-
         letter-spacing: -2px;
       }
 
@@ -1552,24 +1078,16 @@
       .cursor-glow {
         display: none;
       }
-
     }
-
   </style>
 </head>
 
+<body class="lang-en">
 
-<body>
-
-
-  <!-- ============================================================
-       NAVIGATION
-       ============================================================ -->
+  <!-- NAVIGATION -->
 
   <nav>
-
     <div class="nav-inner">
-
 
       <a
         href="#"
@@ -1577,20 +1095,17 @@
         onclick="showTab('about'); return false;"
       >
 
-        <!-- NT + Maple Leaf Logo -->
         <div class="nt-logo"></div>
 
-
         <div>
-
           <div class="brand-name">
             Nebiyou Timotewos
           </div>
 
+          <!-- UPDATED -->
           <div class="brand-sub">
-            Entrepreneur · AI · Data · Impact
+            Proud Canadian
           </div>
-
         </div>
 
       </a>
@@ -1603,35 +1118,38 @@
           class="active"
           onclick="showTab('about'); return false;"
         >
-          About
+          <span class="en">About</span>
+          <span class="fr">À propos</span>
         </a>
 
         <a
           href="#experience"
           onclick="showTab('experience'); return false;"
         >
-          Experience
+          <span class="en">Experience</span>
+          <span class="fr">Expérience</span>
         </a>
 
         <a
           href="#projects"
           onclick="showTab('projects'); return false;"
         >
-          Impact & Projects
+          <span class="en">Impact & Projects</span>
+          <span class="fr">Impact et projets</span>
         </a>
 
         <a
           href="#education"
           onclick="showTab('education'); return false;"
         >
-          Education
+          <span class="en">Education</span>
+          <span class="fr">Formation</span>
         </a>
 
       </div>
 
 
       <div class="nav-right">
-
 
         <div class="language">
 
@@ -1665,7 +1183,6 @@
         </button>
 
 
-        <!-- EMAIL -->
         <a
           class="icon-button"
           href="mailto:nebiyoutimotewos@gmail.com"
@@ -1675,7 +1192,6 @@
         </a>
 
 
-        <!-- LINKEDIN -->
         <a
           class="icon-button"
           href="https://www.linkedin.com/"
@@ -1687,39 +1203,27 @@
         </a>
 
 
-        <!-- INSTAGRAM -->
         <a
           class="icon-button"
-          href="https://www.instagram.com/nebiyoutimotewos/"
+          href="https://www.instagram.com/onlyneb/"
           target="_blank"
           rel="noopener"
           aria-label="Instagram"
         >
-
-          <span
-            class="instagram-icon"
-            aria-hidden="true"
-          ></span>
-
+          <span class="instagram-icon"></span>
         </a>
 
       </div>
 
     </div>
-
   </nav>
-
 
 
   <main class="page">
 
-
-    <!-- ============================================================
-         HERO
-         ============================================================ -->
+    <!-- HERO -->
 
     <section class="hero">
-
 
       <div class="hero-photo-wrap">
 
@@ -1727,7 +1231,7 @@
           src="profile.png"
           alt="Nebiyou Timotewos"
           class="hero-photo"
-        />
+        >
 
       </div>
 
@@ -1744,25 +1248,29 @@
         </h1>
 
 
-        <div
-          class="hero-title"
-          data-en
-        >
-          Creating What’s Next.
-        </div>
+        <div class="hero-title">
 
+          <span class="en">
+            Creating What’s Next.
+          </span>
 
-        <div
-          class="hero-title"
-          data-fr
-          style="display:none;"
-        >
-          Transformer les données, la technologie et les idées en opportunités et en impact.
+          <span class="fr">
+            Transformer les données, la technologie et les idées en opportunités et en impact.
+          </span>
+
         </div>
 
 
         <p class="hero-subtitle">
-          McCall MacBain Scholar · Master of Management in Analytics Candidate · McGill University
+
+          <span class="en">
+            McCall MacBain Scholar · Master of Management in Analytics Candidate · McGill University
+          </span>
+
+          <span class="fr">
+            Boursier McCall MacBain · Candidat à la maîtrise en gestion analytique · Université McGill
+          </span>
+
         </p>
 
 
@@ -1773,7 +1281,8 @@
             href="#projects"
             onclick="showTab('projects'); return false;"
           >
-            ↓ Explore My Work
+            <span class="en">↓ Explore My Work</span>
+            <span class="fr">↓ Découvrir mon travail</span>
           </a>
 
 
@@ -1781,7 +1290,8 @@
             class="secondary-button"
             href="mailto:nebiyoutimotewos@gmail.com"
           >
-            Contact Me
+            <span class="en">Contact Me</span>
+            <span class="fr">Me contacter</span>
           </a>
 
         </div>
@@ -1796,7 +1306,6 @@
             Email
           </a>
 
-
           <a
             class="social"
             href="https://www.linkedin.com/"
@@ -1805,7 +1314,6 @@
           >
             LinkedIn
           </a>
-
 
           <a
             class="social"
@@ -1823,7 +1331,6 @@
 
       <div class="hero-side">
 
-
         <div class="credential-card">
 
           <div class="credential-icon">
@@ -1831,15 +1338,8 @@
           </div>
 
           <div>
-
-            <h3>
-              McGill University
-            </h3>
-
-            <p>
-              Desautels Faculty of Management · MMA
-            </p>
-
+            <h3>McGill University</h3>
+            <p>Desautels Faculty of Management · MMA</p>
           </div>
 
         </div>
@@ -1852,15 +1352,8 @@
           </div>
 
           <div>
-
-            <h3>
-              Occasio Technologies Inc.
-            </h3>
-
-            <p>
-              Founder & CEO · AI-powered opportunity platform
-            </p>
-
+            <h3>Occasio Technologies Inc.</h3>
+            <p>Founder & CEO · AI-powered opportunity platform</p>
           </div>
 
         </div>
@@ -1873,15 +1366,8 @@
           </div>
 
           <div>
-
-            <h3>
-              McCall MacBain Scholar
-            </h3>
-
-            <p>
-              Leadership · Analytics · Technology · Impact
-            </p>
-
+            <h3>McCall MacBain Scholar</h3>
+            <p>Leadership · Analytics · Technology · Impact</p>
           </div>
 
         </div>
@@ -1891,13 +1377,9 @@
     </section>
 
 
-
-    <!-- ============================================================
-         IMPACT STATS
-         ============================================================ -->
+    <!-- STATS -->
 
     <section class="stats">
-
 
       <div class="stat">
 
@@ -1910,7 +1392,15 @@
         </div>
 
         <div class="stat-label">
-          Youth & Families Supported
+
+          <span class="en">
+            Youth & Families Supported
+          </span>
+
+          <span class="fr">
+            Jeunes et familles soutenus
+          </span>
+
         </div>
 
       </div>
@@ -1927,7 +1417,15 @@
         </div>
 
         <div class="stat-label">
-          Cross-Sector Partnerships
+
+          <span class="en">
+            Cross-Sector Partnerships
+          </span>
+
+          <span class="fr">
+            Partenariats intersectoriels
+          </span>
+
         </div>
 
       </div>
@@ -1944,7 +1442,15 @@
         </div>
 
         <div class="stat-label">
-          International Leadership Award Recipient
+
+          <span class="en">
+            International Leadership Award Recipient
+          </span>
+
+          <span class="fr">
+            Récipiendaire de distinctions internationales en leadership
+          </span>
+
         </div>
 
       </div>
@@ -1952,51 +1458,53 @@
     </section>
 
 
-
-    <!-- ============================================================
-         SECTION NAVIGATION
-         ============================================================ -->
+    <!-- SECTION NAVIGATION -->
 
     <div class="section-nav">
 
       <button
         class="section-button active"
+        data-tab="about"
         onclick="showTab('about')"
       >
-        About
+        <span class="en">About</span>
+        <span class="fr">À propos</span>
       </button>
 
 
       <button
         class="section-button"
+        data-tab="experience"
         onclick="showTab('experience')"
       >
-        Experience
+        <span class="en">Experience</span>
+        <span class="fr">Expérience</span>
       </button>
 
 
       <button
         class="section-button"
+        data-tab="projects"
         onclick="showTab('projects')"
       >
-        Impact & Projects
+        <span class="en">Impact & Projects</span>
+        <span class="fr">Impact et projets</span>
       </button>
 
 
       <button
         class="section-button"
+        data-tab="education"
         onclick="showTab('education')"
       >
-        Education
+        <span class="en">Education</span>
+        <span class="fr">Formation</span>
       </button>
 
     </div>
 
 
-
-    <!-- ============================================================
-         ABOUT
-         ============================================================ -->
+    <!-- ABOUT -->
 
     <section
       id="about"
@@ -2005,15 +1513,15 @@
 
       <div class="content-grid">
 
-
         <div class="panel">
 
           <h2>
-            About Me
+            <span class="en">About Me</span>
+            <span class="fr">À propos de moi</span>
           </h2>
 
 
-          <div data-en>
+          <div class="en">
 
             <p>
               Nebiyou Timotewos is a Canadian entrepreneur, humanitarian,
@@ -2022,14 +1530,12 @@
               service awards.
             </p>
 
-
             <p>
               His honours include The Diana Award, the Robert J. Tiffin
               Leadership Award, and the Global Visionaries Educational
               Innovation Award, for which he was recognized as its youngest
               recipient and first Canadian.
             </p>
-
 
             <p>
               He is the Founder and CEO of Occasio Technologies Inc., an
@@ -2039,14 +1545,12 @@
               personalized recommendations, and application tracking.
             </p>
 
-
             <p>
               Built on the belief that opportunity should never depend on
               who you know or where you come from, Occasio aims to make
               opportunity discovery more accessible, personalized, and
               equitable.
             </p>
-
 
             <p>
               Nebiyou began volunteering at 15 and has since founded and
@@ -2056,7 +1560,6 @@
               essential resources and support to more than 3,000 youth and
               families.
             </p>
-
 
             <p>
               His journey, shaped by experiences in Ethiopia, displacement
@@ -2068,45 +1571,63 @@
           </div>
 
 
-          <div
-            data-fr
-            style="display:none;"
-          >
+          <div class="fr">
 
             <p>
               Nebiyou Timotewos est un entrepreneur, humanitaire, auteur à
               succès et leader communautaire canadien reconnu par plus de
-              30 distinctions internationales.
+              30 distinctions internationales en leadership, en innovation
+              et en service communautaire.
             </p>
 
+            <p>
+              Ses distinctions comprennent The Diana Award, le Robert J.
+              Tiffin Leadership Award et le Global Visionaries Educational
+              Innovation Award, pour lequel il a été reconnu comme le plus
+              jeune récipiendaire et le premier Canadien.
+            </p>
 
             <p>
               Il est le fondateur et PDG d'Occasio Technologies Inc., une
-              plateforme alimentée par l'intelligence artificielle qui aide
-              les étudiants canadiens à découvrir des bourses, subventions,
-              stages, possibilités de bénévolat et autres opportunités.
+              plateforme d'opportunités alimentée par l'intelligence
+              artificielle qui aide les étudiants canadiens à découvrir
+              des bourses, des subventions, des stages, des possibilités
+              de bénévolat et plus encore grâce à la mise en correspondance
+              intelligente, aux recommandations personnalisées et au suivi
+              des candidatures.
             </p>
 
-
             <p>
-              Fondée sur la conviction que l'accès aux opportunités ne devrait
-              jamais dépendre de qui l'on connaît ou de son origine, Occasio
-              cherche à rendre la découverte des opportunités plus accessible,
-              personnalisée et équitable.
+              Fondée sur la conviction que l'accès aux opportunités ne
+              devrait jamais dépendre de qui l'on connaît ou de son origine,
+              Occasio vise à rendre la découverte des opportunités plus
+              accessible, personnalisée et équitable.
             </p>
 
+            <p>
+              Nebiyou a commencé à faire du bénévolat à l'âge de 15 ans
+              et a depuis fondé et dirigé plusieurs initiatives axées sur
+              la jeunesse. Par l'intermédiaire de Brothers4Brothers, il
+              a soutenu de jeunes hommes et contribué à remettre en question
+              la stigmatisation entourant la santé mentale. Grâce à
+              Communities Care, il a contribué à fournir des ressources
+              essentielles et du soutien à plus de 3 000 jeunes et familles.
+            </p>
 
             <p>
-              Nebiyou a commencé à faire du bénévolat à l'âge de 15 ans et a
-              depuis fondé et dirigé plusieurs initiatives axées sur la
-              jeunesse.
+              Son parcours, façonné par ses expériences en Éthiopie, son
+              déplacement pendant la guerre au Yémen et la reconstruction
+              de sa vie après son immigration au Canada, continue de guider
+              son engagement à éliminer les obstacles et à créer des voies
+              vers la réussite pour les autres.
             </p>
 
           </div>
 
 
           <h3>
-            Core Skills
+            <span class="en">Core Skills</span>
+            <span class="fr">Compétences principales</span>
           </h3>
 
 
@@ -2136,22 +1657,44 @@
             “
           </div>
 
-
           <h2>
-            Data. Technology. Opportunity.
+            <span class="en">
+              Data. Technology. Opportunity.
+            </span>
+
+            <span class="fr">
+              Données. Technologie. Opportunités.
+            </span>
           </h2>
 
-
           <p>
-            Combining analytics, entrepreneurship, technology,
-            and community leadership to create more accessible
-            pathways to opportunity.
+
+            <span class="en">
+              Combining analytics, entrepreneurship, technology,
+              and community leadership to create more accessible
+              pathways to opportunity.
+            </span>
+
+            <span class="fr">
+              Combiner l'analyse, l'entrepreneuriat, la technologie
+              et le leadership communautaire pour créer des voies
+              plus accessibles vers les opportunités.
+            </span>
+
           </p>
 
-
           <p>
-            A radical belief that a better, more compassionate,
-            and more equitable world is possible.
+
+            <span class="en">
+              A radical belief that a better, more compassionate,
+              and more equitable world is possible.
+            </span>
+
+            <span class="fr">
+              La conviction profonde qu'un monde meilleur,
+              plus compatissant et plus équitable est possible.
+            </span>
+
           </p>
 
         </div>
@@ -2161,10 +1704,7 @@
     </section>
 
 
-
-    <!-- ============================================================
-         EXPERIENCE
-         ============================================================ -->
+    <!-- EXPERIENCE -->
 
     <section
       id="experience"
@@ -2174,9 +1714,9 @@
       <div class="panel">
 
         <h2>
-          Experience
+          <span class="en">Experience</span>
+          <span class="fr">Expérience</span>
         </h2>
-
 
         <div class="timeline">
 
@@ -2188,25 +1728,66 @@
             </h3>
 
             <div class="experience-role">
-              Founder & CEO
+
+              <span class="en">
+                Founder & CEO
+              </span>
+
+              <span class="fr">
+                Fondateur et PDG
+              </span>
+
             </div>
 
             <ul>
 
               <li>
-                Founded an AI-powered opportunity platform helping
-                Canadian students discover scholarships, grants,
-                internships, volunteer opportunities, and more.
+
+                <span class="en">
+                  Founded an AI-powered opportunity platform helping
+                  Canadian students discover scholarships, grants,
+                  internships, volunteer opportunities, and more.
+                </span>
+
+                <span class="fr">
+                  Fondé une plateforme d'opportunités alimentée par
+                  l'intelligence artificielle qui aide les étudiants
+                  canadiens à découvrir des bourses, subventions,
+                  stages, possibilités de bénévolat et plus encore.
+                </span>
+
               </li>
 
-              <li>
-                Developing intelligent matching, personalized
-                recommendations, and application tracking.
-              </li>
 
               <li>
-                Building technology around the belief that opportunity
-                should be more accessible and equitable.
+
+                <span class="en">
+                  Developing intelligent matching, personalized
+                  recommendations, and application tracking.
+                </span>
+
+                <span class="fr">
+                  Développement d'une mise en correspondance intelligente,
+                  de recommandations personnalisées et du suivi des
+                  candidatures.
+                </span>
+
+              </li>
+
+
+              <li>
+
+                <span class="en">
+                  Building technology around the belief that opportunity
+                  should be more accessible and equitable.
+                </span>
+
+                <span class="fr">
+                  Développement d'une technologie fondée sur la conviction
+                  que les opportunités devraient être plus accessibles
+                  et équitables.
+                </span>
+
               </li>
 
             </ul>
@@ -2221,24 +1802,64 @@
             </h3>
 
             <div class="experience-role">
-              Founder · 2023–Present
+
+              <span class="en">
+                Founder · 2023–Present
+              </span>
+
+              <span class="fr">
+                Fondateur · 2023–Aujourd'hui
+              </span>
+
             </div>
 
             <ul>
 
               <li>
-                Founded and scaled a youth-led initiative focused
-                on youth empowerment and community support.
+
+                <span class="en">
+                  Founded and scaled a youth-led initiative focused
+                  on youth empowerment and community support.
+                </span>
+
+                <span class="fr">
+                  Fondé et développé une initiative dirigée par des jeunes
+                  axée sur l'autonomisation des jeunes et le soutien
+                  communautaire.
+                </span>
+
               </li>
 
-              <li>
-                Built cross-sector partnerships across nonprofit,
-                corporate, academic, and public institutions.
-              </li>
 
               <li>
-                Helped provide essential resources and support to
-                more than 3,000 youth and families.
+
+                <span class="en">
+                  Built cross-sector partnerships across nonprofit,
+                  corporate, academic, and public institutions.
+                </span>
+
+                <span class="fr">
+                  Développé des partenariats intersectoriels avec des
+                  organisations à but non lucratif, des entreprises,
+                  des établissements universitaires et des institutions
+                  publiques.
+                </span>
+
+              </li>
+
+
+              <li>
+
+                <span class="en">
+                  Helped provide essential resources and support to
+                  more than 3,000 youth and families.
+                </span>
+
+                <span class="fr">
+                  Contribué à fournir des ressources essentielles et du
+                  soutien à plus de 3 000 jeunes et familles.
+                </span>
+
               </li>
 
             </ul>
@@ -2253,24 +1874,61 @@
             </h3>
 
             <div class="experience-role">
-              GTHA Community Board Member
+
+              <span class="en">
+                GTHA Community Board Member
+              </span>
+
+              <span class="fr">
+                Membre du conseil communautaire de la RGT
+              </span>
+
             </div>
 
             <ul>
 
               <li>
-                Contribute to community investment and youth
-                development initiatives.
+
+                <span class="en">
+                  Contribute to community investment and youth
+                  development initiatives.
+                </span>
+
+                <span class="fr">
+                  Contribuer aux initiatives d'investissement communautaire
+                  et de développement des jeunes.
+                </span>
+
               </li>
 
-              <li>
-                Review funding opportunities based on impact,
-                governance, and sustainability.
-              </li>
 
               <li>
-                Participate in discussions surrounding community
-                investment priorities.
+
+                <span class="en">
+                  Review funding opportunities based on impact,
+                  governance, and sustainability.
+                </span>
+
+                <span class="fr">
+                  Examiner les possibilités de financement en fonction
+                  de l'impact, de la gouvernance et de la durabilité.
+                </span>
+
+              </li>
+
+
+              <li>
+
+                <span class="en">
+                  Participate in discussions surrounding community
+                  investment priorities.
+                </span>
+
+                <span class="fr">
+                  Participer aux discussions sur les priorités
+                  d'investissement communautaire.
+                </span>
+
               </li>
 
             </ul>
@@ -2285,20 +1943,49 @@
             </h3>
 
             <div class="experience-role">
-              Inaugural Member · Representing Canada
+
+              <span class="en">
+                Inaugural Member · Representing Canada
+              </span>
+
+              <span class="fr">
+                Membre inaugural · Représentant le Canada
+              </span>
+
             </div>
 
             <ul>
 
               <li>
-                Collaborate with youth leaders across regions
-                on cross-sector initiatives.
+
+                <span class="en">
+                  Collaborate with youth leaders across regions
+                  on cross-sector initiatives.
+                </span>
+
+                <span class="fr">
+                  Collaborer avec des jeunes leaders de différentes
+                  régions sur des initiatives intersectorielles.
+                </span>
+
               </li>
 
+
               <li>
-                Participate in engagements involving government
-                officials, international institutions, civil society
-                organizations, and corporate leaders.
+
+                <span class="en">
+                  Participate in engagements involving government
+                  officials, international institutions, civil society
+                  organizations, and corporate leaders.
+                </span>
+
+                <span class="fr">
+                  Participer à des échanges avec des représentants
+                  gouvernementaux, des institutions internationales,
+                  des organisations de la société civile et des
+                  dirigeants d'entreprises.
+                </span>
+
               </li>
 
             </ul>
@@ -2313,19 +2000,47 @@
             </h3>
 
             <div class="experience-role">
-              Founder & Youth Leadership Initiative
+
+              <span class="en">
+                Founder & Youth Leadership Initiative
+              </span>
+
+              <span class="fr">
+                Fondateur et initiative de leadership jeunesse
+              </span>
+
             </div>
 
             <ul>
 
               <li>
-                Supported young men through mentorship and
-                leadership development.
+
+                <span class="en">
+                  Supported young men through mentorship and
+                  leadership development.
+                </span>
+
+                <span class="fr">
+                  Soutenu de jeunes hommes grâce au mentorat et
+                  au développement du leadership.
+                </span>
+
               </li>
 
+
               <li>
-                Challenged stigma surrounding men's mental health
-                and encouraged meaningful conversations.
+
+                <span class="en">
+                  Challenged stigma surrounding men's mental health
+                  and encouraged meaningful conversations.
+                </span>
+
+                <span class="fr">
+                  Contribué à remettre en question la stigmatisation
+                  entourant la santé mentale des hommes et encouragé
+                  des conversations significatives.
+                </span>
+
               </li>
 
             </ul>
@@ -2339,10 +2054,7 @@
     </section>
 
 
-
-    <!-- ============================================================
-         IMPACT & PROJECTS
-         ============================================================ -->
+    <!-- IMPACT & PROJECTS -->
 
     <section
       id="projects"
@@ -2363,13 +2075,32 @@
           </h3>
 
           <p>
-            AI-powered opportunity platform designed to help
-            Canadian students discover scholarships, grants,
-            internships, volunteer opportunities, and more.
+
+            <span class="en">
+              AI-powered opportunity platform designed to help
+              Canadian students discover scholarships, grants,
+              internships, volunteer opportunities, and more.
+            </span>
+
+            <span class="fr">
+              Plateforme d'opportunités alimentée par l'IA conçue
+              pour aider les étudiants canadiens à découvrir des
+              bourses, subventions, stages, possibilités de bénévolat
+              et plus encore.
+            </span>
+
           </p>
 
           <span class="project-tag">
-            AI · TECHNOLOGY · OPPORTUNITY
+
+            <span class="en">
+              AI · TECHNOLOGY · OPPORTUNITY
+            </span>
+
+            <span class="fr">
+              IA · TECHNOLOGIE · OPPORTUNITÉS
+            </span>
+
           </span>
 
         </div>
@@ -2386,13 +2117,31 @@
           </h3>
 
           <p>
-            Youth-led community initiative providing essential
-            resources, support, and opportunities to youth
-            and families.
+
+            <span class="en">
+              Youth-led community initiative providing essential
+              resources, support, and opportunities to youth
+              and families.
+            </span>
+
+            <span class="fr">
+              Initiative communautaire dirigée par des jeunes offrant
+              des ressources essentielles, du soutien et des opportunités
+              aux jeunes et aux familles.
+            </span>
+
           </p>
 
           <span class="project-tag">
-            COMMUNITY · YOUTH · IMPACT
+
+            <span class="en">
+              COMMUNITY · YOUTH · IMPACT
+            </span>
+
+            <span class="fr">
+              COMMUNAUTÉ · JEUNESSE · IMPACT
+            </span>
+
           </span>
 
         </div>
@@ -2409,13 +2158,31 @@
           </h3>
 
           <p>
-            Youth mentorship initiative focused on leadership,
-            personal development, and challenging stigma
-            surrounding men's mental health.
+
+            <span class="en">
+              Youth mentorship initiative focused on leadership,
+              personal development, and challenging stigma
+              surrounding men's mental health.
+            </span>
+
+            <span class="fr">
+              Initiative de mentorat jeunesse axée sur le leadership,
+              le développement personnel et la remise en question de
+              la stigmatisation entourant la santé mentale des hommes.
+            </span>
+
           </p>
 
           <span class="project-tag">
-            MENTORSHIP · LEADERSHIP
+
+            <span class="en">
+              MENTORSHIP · LEADERSHIP
+            </span>
+
+            <span class="fr">
+              MENTORAT · LEADERSHIP
+            </span>
+
           </span>
 
         </div>
@@ -2432,15 +2199,35 @@
           </h3>
 
           <p>
-            GTHA Community Board Member contributing to community
-            investment, youth development, and social impact
-            initiatives. Participate in reviewing funding
-            opportunities and supporting community investment
-            decisions.
+
+            <span class="en">
+              GTHA Community Board Member contributing to community
+              investment, youth development, and social impact
+              initiatives. Participate in reviewing funding
+              opportunities and supporting community investment
+              decisions.
+            </span>
+
+            <span class="fr">
+              Membre du conseil communautaire de la RGT contribuant
+              aux initiatives d'investissement communautaire, de
+              développement des jeunes et d'impact social. Participation
+              à l'examen des possibilités de financement et au soutien
+              des décisions d'investissement communautaire.
+            </span>
+
           </p>
 
           <span class="project-tag">
-            TELUS · COMMUNITY · SOCIAL IMPACT
+
+            <span class="en">
+              TELUS · COMMUNITY · SOCIAL IMPACT
+            </span>
+
+            <span class="fr">
+              TELUS · COMMUNAUTÉ · IMPACT SOCIAL
+            </span>
+
           </span>
 
         </div>
@@ -2450,10 +2237,7 @@
     </section>
 
 
-
-    <!-- ============================================================
-         EDUCATION
-         ============================================================ -->
+    <!-- EDUCATION -->
 
     <section
       id="education"
@@ -2463,7 +2247,8 @@
       <div class="panel">
 
         <h2>
-          Education
+          <span class="en">Education</span>
+          <span class="fr">Formation</span>
         </h2>
 
 
@@ -2478,13 +2263,32 @@
           </strong>
 
           <p>
-            Desautels Faculty of Management · McCall MacBain Scholar
+
+            <span class="en">
+              Desautels Faculty of Management · McCall MacBain Scholar
+            </span>
+
+            <span class="fr">
+              Faculté de gestion Desautels · Boursier McCall MacBain
+            </span>
+
           </p>
 
           <p>
-            Focus areas include artificial intelligence, data analytics,
-            statistics, machine learning, business strategy, and
-            emerging technologies.
+
+            <span class="en">
+              Focus areas include artificial intelligence, data analytics,
+              statistics, machine learning, business strategy, and
+              emerging technologies.
+            </span>
+
+            <span class="fr">
+              Les domaines d'intérêt comprennent l'intelligence artificielle,
+              l'analyse de données, les statistiques, l'apprentissage
+              automatique, la stratégie d'affaires et les technologies
+              émergentes.
+            </span>
+
           </p>
 
         </div>
@@ -2505,8 +2309,17 @@
           </p>
 
           <p>
-            Minor in Human Rights & Equity Studies · Professional
-            Certificate in Public Administration and Law
+
+            <span class="en">
+              Minor in Human Rights & Equity Studies · Professional
+              Certificate in Public Administration and Law
+            </span>
+
+            <span class="fr">
+              Mineure en études des droits de la personne et de l'équité ·
+              Certificat professionnel en administration publique et droit
+            </span>
+
           </p>
 
         </div>
@@ -2515,12 +2328,30 @@
         <div class="education-item">
 
           <h3>
-            Academic Interests
+
+            <span class="en">
+              Academic Interests
+            </span>
+
+            <span class="fr">
+              Domaines d'intérêt académique
+            </span>
+
           </h3>
 
           <p>
-            Artificial Intelligence · Data Analytics · Machine Learning ·
-            Business Strategy · Technology · Public Policy · Social Impact
+
+            <span class="en">
+              Artificial Intelligence · Data Analytics · Machine Learning ·
+              Business Strategy · Technology · Public Policy · Social Impact
+            </span>
+
+            <span class="fr">
+              Intelligence artificielle · Analyse de données · Apprentissage
+              automatique · Stratégie d'affaires · Technologie · Politiques
+              publiques · Impact social
+            </span>
+
           </p>
 
         </div>
@@ -2530,13 +2361,9 @@
     </section>
 
 
-
-    <!-- ============================================================
-         FOOTER
-         ============================================================ -->
+    <!-- FOOTER -->
 
     <footer>
-
 
       <div class="footer-brand">
 
@@ -2551,7 +2378,15 @@
           </strong>
 
           <p>
-            Entrepreneur · AI · Data · Impact
+
+            <span class="en">
+              Proud Canadian
+            </span>
+
+            <span class="fr">
+              Fier Canadien
+            </span>
+
           </p>
 
         </div>
@@ -2560,7 +2395,15 @@
 
 
       <p>
-        Building opportunity. Creating impact.
+
+        <span class="en">
+          Building opportunity. Creating impact.
+        </span>
+
+        <span class="fr">
+          Créer des opportunités. Générer de l'impact.
+        </span>
+
       </p>
 
 
@@ -2568,11 +2411,31 @@
 
         <p>
           © 2026 Nebiyou Timotewos.
-          <span>All Rights Reserved.</span>
+
+          <span>
+
+            <span class="en">
+              All Rights Reserved.
+            </span>
+
+            <span class="fr">
+              Tous droits réservés.
+            </span>
+
+          </span>
         </p>
 
+
         <p>
-          Management Analytics Portfolio
+
+          <span class="en">
+            Management Analytics Portfolio
+          </span>
+
+          <span class="fr">
+            Portfolio en gestion analytique
+          </span>
+
         </p>
 
       </div>
@@ -2582,169 +2445,130 @@
   </main>
 
 
-
-  <!-- ============================================================
-       JAVASCRIPT
-       ============================================================ -->
-
   <script>
 
-    /* ============================================================
-       TAB SWITCHING
-       ============================================================ */
+    /* TAB SWITCHING */
 
     function showTab(id) {
 
-      const tabs =
-        document.querySelectorAll(".tab-content");
-
-
-      tabs.forEach(function(tab) {
-
-        tab.classList.remove("active");
-
-      });
-
+      document.querySelectorAll(".tab-content")
+        .forEach(tab => {
+          tab.classList.remove("active");
+        });
 
       const selected =
         document.getElementById(id);
 
+      if (!selected) return;
 
-      if (selected) {
-
-        selected.classList.add("active");
-
-      }
+      selected.classList.add("active");
 
 
-      const sectionButtons =
-        document.querySelectorAll(".section-button");
+      document.querySelectorAll(".section-button")
+        .forEach(button => {
+
+          button.classList.toggle(
+            "active",
+            button.dataset.tab === id
+          );
+
+        });
 
 
-      sectionButtons.forEach(function(button) {
+      document.querySelectorAll(".nav-links a")
+        .forEach(link => {
 
-        button.classList.remove("active");
+          link.classList.toggle(
+            "active",
+            link.getAttribute("href") === "#" + id
+          );
 
-        const text =
-          button.textContent
-            .trim()
-            .toLowerCase();
-
-
-        if (
-          (id === "about" && text === "about") ||
-          (id === "experience" && text === "experience") ||
-          (id === "projects" && text.includes("impact")) ||
-          (id === "education" && text === "education")
-        ) {
-
-          button.classList.add("active");
-
-        }
-
-      });
+        });
 
 
-      const navLinks =
-        document.querySelectorAll(".nav-links a");
+      setTimeout(() => {
 
+        const position =
+          selected.getBoundingClientRect().top +
+          window.scrollY -
+          105;
 
-      navLinks.forEach(function(link) {
-
-        link.classList.remove("active");
-
-        const text =
-          link.textContent
-            .trim()
-            .toLowerCase();
-
-
-        if (
-          (id === "about" && text === "about") ||
-          (id === "experience" && text === "experience") ||
-          (id === "projects" && text.includes("impact")) ||
-          (id === "education" && text === "education")
-        ) {
-
-          link.classList.add("active");
-
-        }
-
-      });
-
-
-      setTimeout(function() {
-
-        if (selected) {
-
-          const position =
-            selected.getBoundingClientRect().top +
-            window.scrollY -
-            105;
-
-
-          window.scrollTo({
-
-            top: position,
-
-            behavior: "smooth"
-
-          });
-
-        }
+        window.scrollTo({
+          top: position,
+          behavior: "smooth"
+        });
 
       }, 40);
 
     }
 
 
-
-    /* ============================================================
-       DARK / LIGHT MODE
-       ============================================================ */
+    /* DARK / LIGHT MODE */
 
     function toggleTheme() {
 
       document.body.classList.toggle("light");
 
-
       const button =
         document.getElementById("themeButton");
 
+      const light =
+        document.body.classList.contains("light");
 
-      if (
-        document.body.classList.contains("light")
-      ) {
+      button.textContent =
+        light ? "☀" : "☾";
 
-        button.textContent = "☀";
-
-        localStorage.setItem(
-          "theme",
-          "light"
-        );
-
-      } else {
-
-        button.textContent = "☾";
-
-        localStorage.setItem(
-          "theme",
-          "dark"
-        );
-
-      }
+      localStorage.setItem(
+        "theme",
+        light ? "light" : "dark"
+      );
 
     }
 
 
+    /* LANGUAGE */
 
-    /* ============================================================
-       REMEMBER THEME
-       ============================================================ */
+    function setLanguage(language) {
+
+      document.body.classList.remove(
+        "lang-en",
+        "lang-fr"
+      );
+
+      document.body.classList.add(
+        "lang-" + language
+      );
+
+      document.documentElement.lang =
+        language;
+
+
+      document.getElementById("enButton")
+        .classList.toggle(
+          "active",
+          language === "en"
+        );
+
+
+      document.getElementById("frButton")
+        .classList.toggle(
+          "active",
+          language === "fr"
+        );
+
+
+      localStorage.setItem(
+        "language",
+        language
+      );
+
+    }
+
+
+    /* RESTORE THEME */
 
     const savedTheme =
       localStorage.getItem("theme");
-
 
     if (savedTheme === "light") {
 
@@ -2757,177 +2581,84 @@
     }
 
 
+    /* RESTORE LANGUAGE */
 
-    /* ============================================================
-       LANGUAGE
-       ============================================================ */
+    const savedLanguage =
+      localStorage.getItem("language") || "en";
 
-    function setLanguage(language) {
-
-      const english =
-        document.querySelectorAll(
-          "[data-en]"
-        );
+    setLanguage(savedLanguage);
 
 
-      const french =
-        document.querySelectorAll(
-          "[data-fr]"
-        );
-
-
-      const enButton =
-        document.getElementById(
-          "enButton"
-        );
-
-
-      const frButton =
-        document.getElementById(
-          "frButton"
-        );
-
-
-      if (language === "fr") {
-
-        english.forEach(function(el) {
-
-          el.style.display = "none";
-
-        });
-
-
-        french.forEach(function(el) {
-
-          el.style.display = "";
-
-        });
-
-
-        frButton.classList.add("active");
-
-        enButton.classList.remove("active");
-
-        document.documentElement.lang = "fr";
-
-      } else {
-
-        french.forEach(function(el) {
-
-          el.style.display = "none";
-
-        });
-
-
-        english.forEach(function(el) {
-
-          el.style.display = "";
-
-        });
-
-
-        enButton.classList.add("active");
-
-        frButton.classList.remove("active");
-
-        document.documentElement.lang = "en";
-
-      }
-
-    }
-
-
-
-    /* ============================================================
-       ANIMATED IMPACT COUNTERS
-       ============================================================ */
+    /* COUNTER ANIMATION */
 
     function animateCounters() {
 
-      const counters =
-        document.querySelectorAll(".counter");
+      document.querySelectorAll(".counter")
+        .forEach(counter => {
+
+          const target =
+            Number(counter.dataset.target);
+
+          const suffix =
+            counter.dataset.suffix || "";
+
+          const duration = 1800;
+
+          const startTime =
+            performance.now();
 
 
-      counters.forEach(function(counter) {
+          function update(currentTime) {
 
-        const target =
-          Number(
-            counter.getAttribute("data-target")
-          );
-
-
-        const suffix =
-          counter.getAttribute("data-suffix") || "";
+            const progress =
+              Math.min(
+                (currentTime - startTime) /
+                duration,
+                1
+              );
 
 
-        const duration = 1800;
+            const eased =
+              1 - Math.pow(
+                1 - progress,
+                3
+              );
 
 
-        const startTime =
-          performance.now();
+            const value =
+              Math.floor(
+                target * eased
+              );
 
-
-        function updateCounter(currentTime) {
-
-          const elapsed =
-            currentTime - startTime;
-
-
-          const progress =
-            Math.min(
-              elapsed / duration,
-              1
-            );
-
-
-          const eased =
-            1 - Math.pow(
-              1 - progress,
-              3
-            );
-
-
-          const currentValue =
-            Math.floor(
-              target * eased
-            );
-
-
-          counter.textContent =
-            currentValue.toLocaleString() +
-            suffix;
-
-
-          if (progress < 1) {
-
-            requestAnimationFrame(
-              updateCounter
-            );
-
-          } else {
 
             counter.textContent =
-              target.toLocaleString() +
+              value.toLocaleString() +
               suffix;
+
+
+            if (progress < 1) {
+
+              requestAnimationFrame(update);
+
+            } else {
+
+              counter.textContent =
+                target.toLocaleString() +
+                suffix;
+
+            }
 
           }
 
-        }
 
+          requestAnimationFrame(update);
 
-        requestAnimationFrame(
-          updateCounter
-        );
-
-      });
+        });
 
     }
 
 
-
-    /* ============================================================
-       MOUSE FOLLOWING GREEN GLOW
-       ============================================================ */
+    /* MOUSE FOLLOWING GREEN GLOW */
 
     const cursorGlow =
       document.createElement("div");
@@ -2942,7 +2673,7 @@
 
     document.addEventListener(
       "mousemove",
-      function(event) {
+      event => {
 
         cursorGlow.style.left =
           event.clientX + "px";
@@ -2959,19 +2690,13 @@
 
     document.addEventListener(
       "mouseleave",
-      function() {
-
-        cursorGlow.style.opacity =
-          "0";
-
+      () => {
+        cursorGlow.style.opacity = "0";
       }
     );
 
 
-
-    /* ============================================================
-       START COUNTERS WHEN PAGE LOADS
-       ============================================================ */
+    /* START */
 
     window.addEventListener(
       "load",
